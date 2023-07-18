@@ -5,6 +5,9 @@ if (localPropertiesFile.exists()) {
         localProperties.load(reader)
     }
 }
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def googleMapApiKey = properties.getProperty('google_maps_key')
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {

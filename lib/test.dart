@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
         markerId: MarkerId('kaimaru'),
         position: LatLng( 36.373772, 127.359185),
         icon: markerbitmap,
-        onTap: (){print("kaimaru");},
+        onTap: (){print(Marker);},
         infoWindow: InfoWindow(title:  "카이마루",onTap: (){print("hello");},),
       ));
       _markers.add(Marker(

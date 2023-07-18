@@ -16,6 +16,7 @@ class GoogleMapsClonePage extends StatelessWidget {
             DraggableScrollableSheet(
               initialChildSize: 0.03,
               minChildSize: 0.03,
+              maxChildSize: 0.68,
               builder: (BuildContext context, ScrollController scrollController) {
                 return SingleChildScrollView(
                   controller: scrollController,
@@ -159,8 +160,6 @@ class CustomInnerContent extends StatelessWidget {
         SizedBox(height: 16),
         Custommenu(),
         SizedBox(height: 16),
-        CustomHorizontallyScrollingRestaurants(),
-        SizedBox(height: 400),
 
       ],
     );
@@ -171,8 +170,9 @@ class Custommenu extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15.0),
+      height: 500,
       child:
-        Row(
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
@@ -198,11 +198,12 @@ class detail_menu extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Color(0xFFF2EFFB),
       margin: const EdgeInsets.all(0.5),
-      child: Column(
+      child: Row(
         children: [
-          SizedBox(height: 5,),
-          Row(
+          SizedBox(width: 5,),
+          Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -210,17 +211,17 @@ class detail_menu extends StatelessWidget{
               Text("5000원"),
             ],
           ),
-          SizedBox(height: 5,),
+          SizedBox(width: 5,),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Container(
-              height: 0.5,
+              width: 1,
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 5,),
+          SizedBox(width: 5,),
           Text("카레라이스\n미역국\n떡볶이"),
-          SizedBox(height: 5,),
+          SizedBox(width: 5,),
         ],
       ),
     );
