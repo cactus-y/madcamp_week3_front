@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:madcamp_week3/api/data/Menu.dart';
 
-
+const String base_url = "http://172.10.5.165:443";
 Future<Menu?> getMenu(String restaurantId) async {
   var url = Uri.parse('${base_url}/menu');
   var queryParams = { 'restaurantId': restaurantId };

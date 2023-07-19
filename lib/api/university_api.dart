@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:madcamp_week3/api/data/University.dart';
 
-
+const String base_url = "http://172.10.5.165:443";
 Future<University?> getUniversity(String universityName) async {
   var url = Uri.parse('${base_url}/university');
   var queryParams = { 'universityName': universityName };
@@ -29,9 +29,8 @@ Future<University?> getUniversity(String universityName) async {
 }
 
 Future<UniversityList?> getUniversityList() async {
-  var url = Uri.parse('${base_url}/university/list');
+  var url = Uri.parse('http://172.10.5.165:443/university/list');
   var response = await http.get(url);
-
   if(response.statusCode == 200) {
     var responseBody = jsonDecode(response.body);
 
